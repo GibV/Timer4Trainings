@@ -92,10 +92,10 @@ function start() {
 				startCurrentTrain();
 				return;
 			}
-			minutes.innerHTML = ('0' + (minutes.innerHTML - 1)).slice(-2);
+			minutes.innerHTML = ("0" + String(Number(minutes.innerHTML) - 1)).slice(-2);
 			seconds.innerHTML = 60;
 		}
-		seconds.innerHTML = ('0' + (seconds.innerHTML - 1)).slice(-2);
+		seconds.innerHTML = ("0" + String(Number(seconds.innerHTML) - 1)).slice(-2);
 	}
 	function destroyTimer() {
 		clearInterval(timeinterval);
@@ -125,7 +125,7 @@ function start() {
 			if (cell.childNodes[3].style.display == "none") {
 				initialiseQuantifier(cell.childNodes[1].innerHTML);
 			} else {
-				initialiseTimer(cell.childNodes[3].childNodes[1].value, cell.childNodes[1].innerHTML);
+				initialiseTimer(cell.querySelector(".traintime").value, cell.childNodes[1].innerHTML);
 			}
 			currentTrain += 1;
 		} else {
