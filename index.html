@@ -1,0 +1,38 @@
+<!DOCTYPE html> <!-- Объявление формата документа -->
+<html>
+	<head> <!-- Техническая информация о документе -->
+		<meta charset="UTF-8"> <!-- Определяем кодировку символов документа -->
+		<meta name="description" lang="ru" content="Здесь можно спланировать тренировку. Во время тренировки на экране будут выводится подсказки, оставшееся время или ничего, если ожидается ручное завершение тренировки. Так же присутствует звковое сопровождение.">
+        <meta name="keywords" lang="ru" content="Таймер планирование план тренировка спорт">
+		<meta name="description" lang="eng" content="Here you can plan a workout. During the workout, prompts will be displayed on the screen, the remaining time or nothing, if the manual completion of the workout is expected. There is also a soundtrack.">
+        <meta name="keywords" lang="eng" content="Timer Planning Plan Workout Sport">
+		<title>Таймер для тренировок</title> <!-- Задаем заголовок документа -->
+		<link rel="stylesheet" type="text/css" href="style.css"> <!-- Подключаем внешнюю таблицу стилей -->
+		<script src="script.js"></script> <!-- Подключаем сценарии -->
+	</head>
+	<body> <!-- Основная часть документа -->
+		<!-- 
+		<template>
+		<hr>
+		-->
+		<div id="planner">
+			<span id="cell0" style="display: none">
+				<label contenteditable> Прэс качат </label>
+				<label> <a onclick="switchtype(this.parentNode.parentNode.id)">На время</a> <input type="text" value=30> секунд </label>
+				<label onclick="switchtype(this.parentNode.id)" style="display: none"> на повоторения </label>
+				<button onclick="sethigh(this.parentNode.id)">^</button>
+				<button onclick="setlow(this.parentNode.id)">_</button>
+				<button onclick="remove(this.parentNode.id)" style="background-color: red">-</button>
+				<hr>
+			</span>
+			<button id="addbtn" onclick="addcell()">+</button>
+			<button onclick="start()" style="background-color:lightgreen">Начать тренировку!</button>
+			<button onclick="clear()">Clear</button>
+		</div>
+		<div id="trainer" onclick="skip()" style="display: none; background-color: yellow">
+			<span id="countdown">3</span>
+			<span id="timer" style="display: none"><a id="tmrmin">00</a>:<a id="tmrsec">00</a> <a id="tmrmsg">Something</a></span>
+			<span id="quantifier" style="display: none"> smt </span>
+		</div>
+	</body>
+</html>
